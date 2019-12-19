@@ -1,4 +1,4 @@
-FROM nkay08/docker-finroc_deps
+FROM nkay08/finroc_deps
 
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends  -o=Dpkg::Use-Pty=0 \
