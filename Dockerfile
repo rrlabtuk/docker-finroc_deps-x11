@@ -11,7 +11,8 @@ RUN apt-get update \
     
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends  -o=Dpkg::Use-Pty=0 \
-    lubuntu-desktop \
+#    lubuntu-desktop \
+    lxde \
     lxlauncher lxmenu-data lxtask \
     policykit-1-gnome \
     && rm -rf /var/lib/apt/lists/* 
