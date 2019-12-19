@@ -1,5 +1,7 @@
 FROM nkay08/finroc_deps
 
+USER root
+
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends  -o=Dpkg::Use-Pty=0 \
     dbus-x11 procps psmisc \
