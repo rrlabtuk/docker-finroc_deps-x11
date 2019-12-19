@@ -9,14 +9,16 @@ RUN apt-get update \
 #    menu menu-xdg mime-support desktop-file-utils \
     && rm -rf /var/lib/apt/lists/* 
     
-
-    
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends  -o=Dpkg::Use-Pty=0 \
     lubuntu-desktop \
     lxlauncher lxmenu-data lxtask \
     policykit-1-gnome \
     && rm -rf /var/lib/apt/lists/* 
+    
+# OpenGL / MESA
+# adds 68 MB to image, disabled
+#RUN apt-get install -y mesa-utils mesa-utils-extra libxv1 
     
 # GTK 2 and 3 settings for icons and style, wallpaper
 RUN echo '\n\
