@@ -13,5 +13,7 @@ An extension to [https://github.com/nkay08/docker-finroc_deps/blob/master/README
   - Add flag `-g` flag to passthrough the graphics card `x11docker -g --user=RETAIN -- --volume=/<path>/finroc_user:/home/finroc_user nkay08/finroc_deps-x11`
     - usually no problems when you use an open source driver
     - for proprietary nvidia drivers you can follow this guide: [https://github.com/mviereck/x11docker/wiki/NVIDIA-driver-support-for-docker-container](https://github.com/mviereck/x11docker/wiki/NVIDIA-driver-support-for-docker-container)
+    - BUT avoid putting `apt-get remove -y kmod xz-utils wget ca-certificates binutils ; \
+    apt-get autoremove -y ; apt-get clean -y` into the new Dockerfile to avoid uninstalling finroc dependencies
 - The image runs a minimal lxde by defaul. if you want a different Desktop environment you need to create a different image based on this.
 
