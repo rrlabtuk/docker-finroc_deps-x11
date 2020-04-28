@@ -16,6 +16,12 @@ RUN apt-get update \
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends  -o=Dpkg::Use-Pty=0 \
     tilix
+    && rm -rf /var/lib/apt/lists/* 
+    
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends  -o=Dpkg::Use-Pty=0 \
+    fuse
+    && rm -rf /var/lib/apt/lists/* 
 
 CMD ["/usr/bin/tilix"]
 
