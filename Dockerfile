@@ -24,7 +24,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && wget -O /tmp/easyhg.deb https://code.soundsoftware.ac.uk/attachments/download/2431/easymercurial_1.4_amd64.deb \
     && dpkg -i /tmp/easyhg.deb \
-    && rm /tmp/easymercurial_1.4_amd64.deb
+    && rm /tmp/easyhg.deb
 
 CMD ["/usr/bin/tilix"]
 
