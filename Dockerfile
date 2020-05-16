@@ -25,7 +25,12 @@ RUN apt-get update \
     && wget -O /tmp/easyhg.deb https://code.soundsoftware.ac.uk/attachments/download/2431/easymercurial_1.4_amd64.deb \
     && dpkg -i /tmp/easyhg.deb \
     && rm /tmp/easyhg.deb
-
+    
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends  -o=Dpkg::Use-Pty=0 \
+    doxygen-gui \
+    && rm -rf /var/lib/apt/lists/* 
+    
 CMD ["/usr/bin/tilix"]
 
 USER finroc_user
