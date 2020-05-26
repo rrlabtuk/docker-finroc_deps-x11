@@ -31,6 +31,11 @@ RUN apt-get update \
     doxygen-gui \
     && rm -rf /var/lib/apt/lists/* 
     
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends  -o=Dpkg::Use-Pty=0 \
+    tortoisehg \
+    && rm -rf /var/lib/apt/lists/* 
+    
 CMD ["/usr/bin/tilix"]
 
 USER finroc_user
